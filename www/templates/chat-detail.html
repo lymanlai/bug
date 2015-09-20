@@ -1,0 +1,15 @@
+<ion-view view-title="{{chat.name}}">
+  <ion-content class="padding" start-y="120">
+    <ol class="messages">
+      <li ng-bind-html="message.content" ng-repeat="message in messages"></li>
+    </ol>
+    <div class="bar bar-header item-input-inset">
+      <label class="item-input-wrapper">
+        <input placeholder="" type="text">
+      </label>
+      <button class="button button-small">
+        发送
+      </button>
+    </div>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,231 @@
+<ion-view view-title="聊天">
+  <ion-content class="padding chat">
+    <div class="list card">
+      <div class="item item-avatar">
+        <img src="img/a1.jpg">
+        <h2>
+          {{chat.name}} &nbsp;
+          <i class="icon ion-female royal"></i> &nbsp;
+          <i class="icon ion-ios-heart assertive">
+            5
+          </i>
+        </h2>
+        <p>
+          1990.11.07
+        </p>
+      </div>
+    </div>
+
+    <div class="step" ng-show="isStep('0')">
+      <h4>
+        对方邀请您一起玩闯关游戏
+      </h4>
+      <h5>每闯过一关，可以解锁对方一个隐私信息</h5>
+      <div class="button-bar">
+        <a class="button">不同意</a>
+        <a class="button button-balanced" ng-click="goTo('1.question')">同意</a>
+      </div>
+    </div>
+
+    <div class="step" ng-show="isStep('1.question')">
+      <h4>
+        1. 随机智力游戏1（单选题）
+      </h4>
+      <div class="list">
+        <label class="item item-radio">
+          <input type="radio" name="group">
+          <div class="item-content">
+            智力答案1
+          </div>
+          <i class="radio-icon ion-checkmark"></i>
+        </label>
+        <label class="item item-radio">
+          <input type="radio" name="group">
+          <div class="item-content">
+            智力答案2
+          </div>
+          <i class="radio-icon ion-checkmark"></i>
+        </label>
+        <button class="button button-block button-positive" ng-click="goTo('1.ok')">
+          提交答案
+        </button>
+      </div>
+    </div>
+
+    <div class="step" ng-show="isStep('1.ok')">
+      <div class="list card">
+        <a href="#" class="item"> 身高：175CM </a>
+        <a href="#" class="item"> 体重：50KG </a>
+        <a href="#" class="item"> 职业：设计师 </a>
+      </div>
+      <button class="button button-block button-balanced" ng-click="goTo('2.question')">
+        下一个挑战
+      </button>
+    </div>
+
+    <div class="step" ng-show="isStep('2.question')">
+      <h4>
+        2. 随机智力游戏2（多选题）
+      </h4>
+      <ul class="list">
+        <li class="item item-checkbox">
+          <label class="checkbox">
+            <input type="checkbox">
+          </label>
+          智力答案1
+        </li>
+        <li class="item item-checkbox">
+          <label class="checkbox">
+            <input type="checkbox">
+          </label>
+          智力答案2
+        </li>
+        <li class="item item-checkbox">
+          <label class="checkbox">
+            <input type="checkbox">
+          </label>
+          智力答案3
+        </li>
+        <li class="item item-checkbox">
+          <label class="checkbox">
+            <input type="checkbox">
+          </label>
+          智力答案4
+        </li>
+      </ul>
+      <button class="button button-block button-positive" ng-click="goTo('2.ok')">
+        提交答案
+      </button>
+    </div>
+
+    <div class="step" ng-show="isStep('2.ok')">
+      <div class="card">
+        <div class="item item-text-wrap">
+          显示兴趣爱好信息等，例如：我喜欢唱歌、旅游、看书、古筝、钢琴。
+        </div>
+      </div>
+      <button class="button button-block button-balanced" ng-click="goTo('3.question')">
+        下一个挑战
+      </button>
+    </div>
+
+    <div class="step" ng-show="isStep('3.question')">
+      <h4>
+        3. 类似抱抱那样提类似真心话大冒险的问题，但是是用户可以指定的而不是自动随机的大冒险问题。 例如：认同没有性的爱情么？ 或者：你最喜欢得一首歌是神马？
+      </h4>
+      <div class="list">
+        <label class="item item-input">
+          <input type="text" placeholder="这里填写答案">
+        </label>
+      </div>
+      <button class="button button-block button-positive" ng-click="goTo('3.ok')">
+        提交答案
+      </button>
+    </div>
+
+    <div class="step" ng-show="isStep('3.ok')">
+      <div class="card">
+        <div class="item item-text-wrap">
+          显示吃喝玩乐生活习惯相关的信息
+        </div>
+      </div>
+      <button class="button button-block button-balanced" ng-click="goTo('4.question')">
+        下一个挑战
+      </button>
+    </div>
+
+    <div class="step" ng-show="isStep('4.question')">
+      <h4>
+        4. 类似抱抱那样提类似真心话大冒险的问题，但是是用户可以指定的而不是自动随机的大冒险问题。 例如：认同没有性的爱情么？ 或者：你最喜欢得一首歌是神马？
+      </h4>
+      <div class="list">
+        <label class="item item-input">
+          <input type="text" placeholder="这里填写答案">
+        </label>
+      </div>
+      <button class="button button-block button-positive" ng-click="goTo('4.ok')">
+        提交答案
+      </button>
+    </div>
+
+    <div class="step" ng-show="isStep('4.ok')">
+      <div class="card">
+        <div class="item item-text-wrap">
+          显示最想分享给对方的故事
+        </div>
+      </div>
+      <button class="button button-block button-balanced" ng-click="goTo('5.question')">
+        下一个挑战
+      </button>
+    </div>
+
+    <div class="step" ng-show="isStep('5.question')">
+      <h4>
+        5. 类似抱抱那样提类似真心话大冒险的问题，但是是用户可以指定的而不是自动随机的大冒险问题。 例如：认同没有性的爱情么？ 或者：你最喜欢得一首歌是神马？
+      </h4>
+      <div class="list">
+        <label class="item item-input">
+          <input type="text" placeholder="这里填写答案">
+        </label>
+      </div>
+      <button class="button button-block button-positive" ng-click="goTo('5.ok')">
+        提交答案
+      </button>
+    </div>
+
+    <div class="step" ng-show="isStep('5.ok')">
+      <div class="card">
+        <div class="item item-text-wrap">
+          显示喜欢什么样的异性的信息
+        </div>
+      </div>
+      <button class="button button-block button-balanced" ng-click="goTo('beFriends')">
+        完成挑战！成为好友！
+      </button>
+    </div>
+
+    <div class="step" ng-show="isStep('beFriends')">
+      <p>
+        恭喜你们！你们经过一系列得闯关游戏，一步步了解了对方，你们现在是好友了。 八阿哥是一个实名认证的高质量交友平台，你们现在可以进一步更深入的了解对方了！ 你们可以：
+      </p>
+      <div class="list">
+        <label class="item item-icon-right">
+          <div class="item-content">
+            引导用户线下一起去
+          </div>
+          <i class="icon ion-chevron-right icon-accessory"></i>
+        </label>
+
+        <label class="item item-icon-right">
+          <div class="item-content">
+            喝咖啡或吃饭等
+          </div>
+          <i class="icon ion-chevron-right icon-accessory"></i>
+        </label>
+
+        <label class="item item-icon-right">
+          <div class="item-content">
+            点击后导航到
+          </div>
+          <i class="icon ion-chevron-right icon-accessory"></i>
+        </label>
+
+        <label class="item item-icon-right">
+          <div class="item-content">
+            与官方合作的高品质的
+          </div>
+          <i class="icon ion-chevron-right icon-accessory"></i>
+        </label>
+
+        <label class="item item-icon-right">
+          <div class="item-content">
+            咖啡厅餐馆等
+          </div>
+          <i class="icon ion-chevron-right icon-accessory"></i>
+        </label>
+
+      </div>
+    </div>
+
+  </ion-content>
+</ion-view>
